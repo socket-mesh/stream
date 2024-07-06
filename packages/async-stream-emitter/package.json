@@ -1,0 +1,41 @@
+{
+	"name": "@socket-mesh/async-stream-emitter",
+	"version": "7.2.0",
+	"description": "An alternantive to EventEmitter using consumable streams.",
+  "type": "module",
+  "main": "src/index.js",
+	"types": "src/index.d.ts",
+	"scripts": {
+		"build": "node ../../scripts/build.mjs && tsc",
+		"deploy": "cd dist && npm publish --access public",
+		"test": "cross-env node --test --loader ts-node/esm test/index.spec.ts"
+	},
+	"repository": {
+		"type": "git",
+		"url": "git://github.com/socket-mesh/async-stream-emitter.git"
+	},
+	"keywords": [
+		"iterable",
+		"async",
+		"stream",
+		"event",
+		"emitter",
+		"for-await-of"
+	],
+	"author": "Jonathan Gros-Dubois",
+	"contributors": [
+		{
+			"name": "Jonathan Gros-Dubois",
+			"email": "grosjona@yahoo.com.au"
+		},
+		"Greg Kimmy"
+	],
+	"license": "MIT",
+	"bugs": {
+		"url": "https://github.com/socket-mesh/async-stream-emitter/issues"
+	},
+	"homepage": "https://github.com/socket-mesh/async-stream-emitter#readme",
+	"dependencies": {
+		"@socket-mesh/stream-demux": "10.2.0"
+	}
+}
