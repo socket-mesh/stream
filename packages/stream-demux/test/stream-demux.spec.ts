@@ -332,7 +332,7 @@ describe('StreamDemux', () => {
 		assert.strictEqual(receivedPackets.length, 100);
 	});
 
-	it('should write to the no-named stream if no listeners are found', async () => {
+	it('should write all values to the no-named stream', async () => {
 		(async () => {
 			await wait(10);
 
@@ -362,8 +362,9 @@ describe('StreamDemux', () => {
 
 		await wait(50);
 
-		assert.strictEqual(otherPackets[0], 'world1');
-		assert.strictEqual(otherPackets.length, 1);
+		assert.deepEqual(otherPackets[0], { stream: 'hi', value: 'world1' });
+		assert.deepEqual(otherPackets[1], { stream: 'hello', value: 'world2' });
+		assert.strictEqual(otherPackets.length, 2);
 		assert.strictEqual(helloPackets[0], 'world2');
 		assert.strictEqual(helloPackets.length, 1);
 	});

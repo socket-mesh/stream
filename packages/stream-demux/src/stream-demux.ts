@@ -59,7 +59,7 @@ export class StreamDemux<T> {
 
 	closeAll(value?: T) {
 		for (let [streamName, stream] of Object.entries(this.streams)) {
-			if (this._allEventsStream) {
+			if (this._allEventsStream && value !== undefined) {
 				this._allEventsStream.write({ stream: streamName, value });
 			}
 
